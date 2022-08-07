@@ -3,6 +3,7 @@ using ImmersiveResearch;
 using ResearchPal;
 using System;
 using System.Collections.Generic;
+using Verse;
 
 namespace ImmersiveIshResearch;
 
@@ -11,7 +12,8 @@ public static class Tree_PopulateNodes
 {
     public static void Postfix(ref List<ResearchNode> __result)
     {
-        if (ResearchPalPatch.IsGameStarted)
+        if (ResearchPalPatch.IsGameStarted
+            && Current.Game.CurrentMap != null)
         {
             __result.RemoveAll(researchNode =>
             {
