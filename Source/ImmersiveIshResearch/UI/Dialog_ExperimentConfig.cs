@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -75,8 +77,8 @@ public class Dialog_ExperimentConfig : Window
             "UltratechResearch", "Ultratech"));
         _experimentNames.Add(new ExperimentConfigUIElement(ImmersiveResearchTextures.SpacecraftIcon,
             "SpacecraftResearch", "Spacecraft"));
-        _experimentNames.Add(new ExperimentConfigUIElement(ImmersiveResearchTextures.ModIcon, "ModResearch",
-            "Mod"));
+        _experimentNames.Add(new ExperimentConfigUIElement(ImmersiveResearchTextures.UncategorizedIcon,
+            "UncategorizedResearch", "Uncategorized"));
 
         _experimentTypes.Add(new ExperimentConfigUIElement(ImmersiveResearchTextures.ResearchSizeSmallIcon, "Small",
             "Small"));
@@ -86,8 +88,6 @@ public class Dialog_ExperimentConfig : Window
             "Large"));
         _experimentTypes.Add(new ExperimentConfigUIElement(ImmersiveResearchTextures.ResearchSizeEssentialIcon,
             "Essential", "Essential"));
-        _experimentTypes.Add(new ExperimentConfigUIElement(ImmersiveResearchTextures.ResearchSizeModIcon, "Unknown",
-            "Unknown"));
 
         //default selection to dodge nullref exceps
         _selectedRecipe = DefDatabase<RecipeDef>.AllDefsListForReading[0];
@@ -133,7 +133,7 @@ public class Dialog_ExperimentConfig : Window
         AddExpRect.x += 370f;
 
         //ExpList.DrawTextList(AddExpRect, _experimentNames, "Experiment Types");
-        var selectedExp = ExpList.SelectedEntry != null ? ExpList.SelectedEntry.EntryLabel : "None Selected";
+        var selectedExp = ExpList.SelectedEntry != null ? ExpList.SelectedEntry.EntryLabel : string.Empty;
         ExpList.DrawImageList(AddExpRect, "Experiment Types");
 
         // 'select type' list
@@ -161,7 +161,21 @@ public class Dialog_ExperimentConfig : Window
         {
             isExperimentSelected = true;
             _selectedRecipe = finalDef;
-            recipeDescription = _selectedRecipe.description;
+
+            StringBuilder descriptionBuilder = new StringBuilder(_selectedRecipe.description);
+
+            descriptionBuilder.Append("\n\nRequires: ");
+
+            foreach (IngredientCount ingredient in _selectedRecipe.ingredients)
+            {
+                descriptionBuilder.Append(IngredientCountToString(ingredient)).Append(", ");
+            }
+
+            descriptionBuilder.Length -= 2;
+
+            descriptionBuilder.Append('.');
+
+            recipeDescription = descriptionBuilder.ToString();
         }
 
         // text explaining selection, e.g. 'Small Biological Research Project - will help unlock biological research'
@@ -171,7 +185,19 @@ public class Dialog_ExperimentConfig : Window
             y = inRect.yMax - 100f
         };
         Text.Font = GameFont.Medium;
-        Widgets.Label(rect3, _selectedExperimentDefName);
+
+        List<string> recipeNameWords = new List<string>(3);
+
+        recipeNameWords.Add(selectedExpType);
+
+        if (selectedExp != String.Empty)
+        {
+            recipeNameWords.Add(selectedExp.Substring(0, selectedExp.Length - "Experiment".Length + 2));
+        }
+
+        recipeNameWords.Add("Experiment");
+
+        Widgets.Label(rect3, String.Join(" ", recipeNameWords));
 
         Text.Font = GameFont.Small;
         var rect4 = rect3;
@@ -189,7 +215,7 @@ public class Dialog_ExperimentConfig : Window
         if (isExperimentSelected && _selectedRecipe.HasModExtension<ResearchDefModExtension>())
         {
             Widgets.Label(rect5,
-                "Potential Research Projects left to discover: " +
+                "Number of potential research projects available to discover: " +
                 leftProjects);
         }
 
@@ -216,6 +242,16 @@ public class Dialog_ExperimentConfig : Window
             Find.WindowStack.Add(window);
         }
         // exit button?
+    }
+
+    private static string IngredientCountToString(IngredientCount ingredientCount)
+    {
+        if (ingredientCount.IsFixedIngredient)
+        {
+            return ingredientCount.Summary;
+        }
+
+        return $"{ingredientCount.GetBaseCount()}x {ingredientCount.filter.DisplayRootCategory.Label}";
     }
 
     private void CloseMsgBoxWindow(Dialog_MessageBox mb)

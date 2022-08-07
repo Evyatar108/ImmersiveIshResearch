@@ -64,42 +64,6 @@
     </deepLumpSizeRange>
   </ThingDef>
   <ThingDef ParentName="ResourceBase">
-    <defName>UselessDatadisk</defName>
-    <label>Useless datadisk</label>
-    <description>A Glitterworld datadisk that has been successfully unlocked. Unfortunately, the disk is either broken or contains nothing of value.</description>
-    <thingClass>ImmersiveResearch.Thing_Datadisk</thingClass>
-    <graphicData>
-      <texPath>Things/Item/Datadisks/Common</texPath>
-      <graphicClass>Graphic_StackCount</graphicClass>
-    </graphicData>
-    <resourceReadoutPriority>First</resourceReadoutPriority>
-    <soundInteract>Metal_Drop</soundInteract>
-    <soundDrop>Metal_Drop</soundDrop>
-    <useHitPoints>false</useHitPoints>
-    <resourceReadoutAlwaysShow>true</resourceReadoutAlwaysShow>
-    <statBases>
-      <MarketValue>30</MarketValue>
-      <Mass>0.008</Mass>
-      <MaxHitPoints>35</MaxHitPoints>
-    </statBases>
-    <thingCategories>
-      <li>Items</li>
-    </thingCategories>
-    <comps>
-      <li>
-        <compClass>ImmersiveResearch.DatadiskThingComp</compClass>
-      </li>
-    </comps>
-    <stackLimit>20</stackLimit>
-    <smallVolume>true</smallVolume>
-    <deepCommonality>0.5</deepCommonality>
-    <deepCountPerPortion>40</deepCountPerPortion>
-    <deepLumpSizeRange>
-      <min>2</min>
-      <max>10</max>
-    </deepLumpSizeRange>
-  </ThingDef>
-  <ThingDef ParentName="ResourceBase">
     <defName>ValuableDatadisk</defName>
     <label>Valuable datadisk</label>
     <description>A Glitterworld datadisk that has been successfully unlocked. The disk contains valuable data which may fetch a high price with certain traders.</description>

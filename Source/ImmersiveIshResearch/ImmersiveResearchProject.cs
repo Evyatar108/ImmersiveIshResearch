@@ -5,8 +5,6 @@ namespace ImmersiveResearch
 {
     public class ImmersiveResearchProject
     {
-        private ResearchSizes _researchSize;
-
         public ImmersiveResearchProject(ResearchProjectDef projDef, bool discovered, float weight,
             List<ResearchTypes> rTypes, ResearchSizes rSize)
         {
@@ -14,7 +12,7 @@ namespace ImmersiveResearch
             IsDiscovered = discovered;
             Weighting = weight;
             ResearchTypes = rTypes;
-            _researchSize = rSize;
+            ResearchSize = rSize;
         }
 
         public ImmersiveResearchProject(bool discovered, float weight, List<ResearchTypes> rTypes, ResearchSizes rSize)
@@ -22,7 +20,7 @@ namespace ImmersiveResearch
             IsDiscovered = discovered;
             Weighting = weight;
             ResearchTypes = rTypes;
-            _researchSize = rSize;
+            ResearchSize = rSize;
         }
 
         public ImmersiveResearchProject(ResearchProjectDef projDef, bool discovered, float weight)

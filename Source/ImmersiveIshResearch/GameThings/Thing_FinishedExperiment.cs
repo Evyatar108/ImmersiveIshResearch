@@ -58,13 +58,13 @@ namespace ImmersiveResearch
 
             if (comp.pawnExperimentAuthorName == null)
             {
-                return sBuilder.ToString();
+                return string.Empty;
             }
 
-            sBuilder.Append("Most Recent Experiment Author" + ": ");
-            sBuilder.Append(comp.pawnExperimentAuthorName + "\n");
-            sBuilder.Append("Research Discovered" + ": ");
-            sBuilder.Append(comp.researchDefName);
+            sBuilder.Append("Most Recent Experiment Author: ");
+            sBuilder.AppendLine(comp.pawnExperimentAuthorName);
+            sBuilder.Append("Research Discovered: ");
+            sBuilder.Append(comp.researchDef.label.CapitalizeFirst());
 
 
             return sBuilder.ToString();
@@ -72,8 +72,8 @@ namespace ImmersiveResearch
 
         private void SelectResearch()
         {
-            var temp = LoreComputerHarmonyPatches.SelectResearchByWeightingAndType(_researchProjsForSelection);
-            def.GetModExtension<ResearchDefModExtension>().ResearchDefAttachedToExperiment = temp;
+            def.GetModExtension<ResearchDefModExtension>().ResearchDefAttachedToExperiment =
+                LoreComputerHarmonyPatches.SelectResearchByWeightingAndType(_researchProjsForSelection);
         }
 
         private void GetResearchProjsByType()
@@ -85,65 +85,37 @@ namespace ImmersiveResearch
 
             if (!def.GetModExtension<ResearchDefModExtension>().researchTypes.NullOrEmpty())
             {
-                var tempProjList = new List<ImmersiveResearchProject>();
-                var TempDict = LoreComputerHarmonyPatches.UndiscoveredResearchList.MainResearchDict;
+                var mainResearchDict = LoreComputerHarmonyPatches.UndiscoveredResearchList.MainResearchDict;
 
                 if (_thingResearchTypes[0] == ResearchTypes.Mod)
                 {
-                    tempProjList = TempDict.Values.ToList();
-                    tempProjList.RemoveAll(item => item.ResearchTypes[0] != ResearchTypes.Mod);
+                    var nonModImmersiveResearchProjects = mainResearchDict.Values.Where(item => item.ResearchTypes[0] != ResearchTypes.Mod);
 
-                    var finalList = new List<ResearchProjectDef>();
-
-                    foreach (var immersiveResearchProject in tempProjList)
+                    foreach (var immersiveResearchProject in nonModImmersiveResearchProjects)
                     {
-                        finalList.Add(immersiveResearchProject.ProjectDef);
+                        _researchProjsForSelection.Add(immersiveResearchProject.ProjectDef);
                     }
 
-                    _researchProjsForSelection.AddRange(finalList);
                     SelectResearch();
                 }
                 else
                 {
-                    var t = TempDict.Values.ToList().Where(item => item.ResearchSize == _thingResearchSize);
-                    var finalSearchSpace =
-                        t.Where(item => item.ResearchTypes.Any(x => x == _thingResearchTypes[0]));
 
-                    foreach (var p in finalSearchSpace)
+                    var projects = mainResearchDict.Values
+                        .Where(item => item.ResearchSize == _thingResearchSize
+                                && item.ResearchTypes.Any(x => x == _thingResearchTypes[0])
+                                && item.ProjectDef != null
+                                && !item.IsDiscovered);
+
+                    bool foundProjects = false;
+                    foreach (var project in projects)
                     {
-                        var ProjDef = p.ProjectDef;
-
-                        if (ProjDef == null)
-                        {
-                            continue;
-                        }
-
-                        if (!TempDict.ContainsKey(ProjDef.defName))
-                        {
-                            //Log.Error("cant find key: " + ProjDef.defName);
-                            continue;
-                        }
-
-                        if (TempDict[ProjDef.defName].IsDiscovered)
-                        {
-                            //Log.Error("is discovered: " + ProjDef.defName);
-                            continue;
-                        }
-
-                        //Log.Error("adding proj: " + ProjDef.defName);
-                        tempProjList.Add(TempDict[ProjDef.defName]);
+                        foundProjects = true;
+                        _researchProjsForSelection.Add(project.ProjectDef);
                     }
 
-                    if (tempProjList.Count > 0)
+                    if (foundProjects)
                     {
-                        var finalList = new List<ResearchProjectDef>();
-
-                        foreach (var immersiveResearchProject in tempProjList)
-                        {
-                            finalList.Add(immersiveResearchProject.ProjectDef);
-                        }
-
-                        _researchProjsForSelection.AddRange(finalList);
                         SelectResearch();
                     }
                     else

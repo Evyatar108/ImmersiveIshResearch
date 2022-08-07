@@ -18,6 +18,7 @@
         Advanced,
         Spacer,
         Ultra,
-        Mod
+        Mod,
+        Uncategorized
     }
 }

@@ -7,7 +7,7 @@ namespace ImmersiveResearch
     {
         public bool ExperimentHasBeenMade;
 
-        public string ResearchDefAttachedToExperiment;
+        public ResearchProjectDef ResearchDefAttachedToExperiment;
 
         public ResearchSizes ResearchSize;
         public List<ResearchTypes> researchTypes = new List<ResearchTypes>();

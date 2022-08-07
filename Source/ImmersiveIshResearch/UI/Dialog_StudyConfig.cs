@@ -62,7 +62,7 @@ namespace ImmersiveResearch
                     var unused = thing.TryGetComp<ResearchThingComp>();
 
                     _finishedExperimentList.Add(
-                        new Tuple<string, Thing>(thing.TryGetComp<ResearchThingComp>().researchDefName, thing));
+                        new Tuple<string, Thing>(thing.TryGetComp<ResearchThingComp>().researchDef.label.CapitalizeFirst(), thing));
                 }
                 // Log.Error("Num of experiments in colony: " + thingList.Count);
             }
@@ -73,7 +73,7 @@ namespace ImmersiveResearch
         public override void DoWindowContents(Rect inRect)
         {
             Thing selectedExperiment = null;
-            var selectedExperimentName = "";
+            var selectedResearchLabel = "";
             Pawn selectedPawn = null;
             var isExperimentSelected = false;
 
@@ -119,7 +119,7 @@ namespace ImmersiveResearch
             else
             {
                 selectedExperiment = _expsInColony.SelectedEntry?.EntryAttachedThing;
-                selectedExperimentName = _expsInColony.SelectedEntry?.EntryLabel;
+                selectedResearchLabel = _expsInColony.SelectedEntry?.EntryLabel;
                 _expsInColony.DrawTextListWithAttachedThing(AddExpRect, _finishedExperimentList,
                     "All Experiments In Colony");
             }
@@ -143,7 +143,7 @@ namespace ImmersiveResearch
 
 
             // need to get defName of recipe from this point
-            var _selectedOption = selectedPawn?.Name + " will study: " + selectedExperimentName;
+            var _selectedOption = selectedPawn?.Name + " will study: " + selectedResearchLabel;
 
 
             var warningText = "";
@@ -181,7 +181,7 @@ namespace ImmersiveResearch
                 selectedRecipeDef = finalDef;
             }
 
-            if (selectedPawn != null && selectedExperimentName != "")
+            if (selectedPawn != null && selectedResearchLabel != "")
             {
                 isExperimentSelected = true;
             }
@@ -210,7 +210,7 @@ namespace ImmersiveResearch
                 if (selectedExperiment != null)
                 {
                     selectedExperiment.def.GetModExtension<ResearchDefModExtension>()
-                        .ResearchDefAttachedToExperiment = selectedExperimentName;
+                        .ResearchDefAttachedToExperiment = LoreComputerHarmonyPatches.FullConcreteResearchList.First(x => x.label.EqualsIgnoreCase(selectedResearchLabel));
                 }
 
                 Close();

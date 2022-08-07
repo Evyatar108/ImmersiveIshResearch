@@ -5,19 +5,19 @@ namespace ImmersiveResearch
     internal class ResearchThingComp : ThingComp
     {
         public string pawnExperimentAuthorName;
-        public ResearchProjectDef researchDef;
         public string researchDefName;
         public ResearchCompProperties Properties => Properties;
+
+        public ResearchProjectDef researchDef => LoreComputerHarmonyPatches.UndiscoveredResearchList.MainResearchDict[researchDefName].ProjectDef;
 
         public void AddPawnAuthor(string author)
         {
             pawnExperimentAuthorName = author;
         }
 
-        public void AddResearch(string projDef)
+        public void AddResearch(ResearchProjectDef projDef)
         {
-            //Properties.researchDef = projDef;
-            researchDefName = projDef;
+            researchDefName = projDef.defName;
         }
     }
 }

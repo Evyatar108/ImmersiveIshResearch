@@ -45,11 +45,11 @@ namespace ImmersiveResearch
             ResearchDictBools.Clear();
             ResearchDictWeightings.Clear();
 
-            for (var i = 0; i < UndiscoveredResearchList.Count; i++)
+            foreach (KeyValuePair<string, ImmersiveResearchProject> kvp in UndiscoveredResearchList)
             {
-                ResearchDictKeys.Add(UndiscoveredResearchList.ElementAt(i).Key);
-                ResearchDictBools.Add(UndiscoveredResearchList.ElementAt(i).Value.IsDiscovered);
-                ResearchDictWeightings.Add(UndiscoveredResearchList.ElementAt(i).Value.Weighting);
+                ResearchDictKeys.Add(kvp.Key);
+                ResearchDictBools.Add(kvp.Value.IsDiscovered);
+                ResearchDictWeightings.Add(kvp.Value.Weighting);
             }
         }
 
@@ -58,16 +58,15 @@ namespace ImmersiveResearch
             UndiscoveredResearchList.Clear();
             for (var i = 0; i < ResearchDictKeys.Count; i++)
             {
-                var i1 = i;
                 var projToAdd =
-                    LoreComputerHarmonyPatches.FullConcreteResearchList.Where(item =>
-                        item.defName == ResearchDictKeys[i1]);
+                    LoreComputerHarmonyPatches.FullConcreteResearchList
+                    .Where(item => item.defName == ResearchDictKeys[i])
+                    .FirstOrDefault();
 
-                if (!(projToAdd.Count() < 0))
+                if (projToAdd != null)
                 {
-                    var proj = projToAdd.ElementAt(0);
                     UndiscoveredResearchList.Add(ResearchDictKeys[i],
-                        new ImmersiveResearchProject(proj, ResearchDictBools[i], ResearchDictWeightings[i]));
+                        new ImmersiveResearchProject(projToAdd, ResearchDictBools[i], ResearchDictWeightings[i]));
                 }
                 else
                 {

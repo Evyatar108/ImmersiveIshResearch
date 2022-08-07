@@ -6,10 +6,126 @@
     800 to 2k = medium
     2k and above = large-->
   <RecipeDef>
+    <defName>SmallUncategorizedResearch</defName>
+    <label>small uncategorized research project</label>
+    <description>A small research project based on various fields with no specific well defined categorization.</description>
+    <jobString>Performing small uncategorized experiment.</jobString>
+    <workAmount>1500</workAmount>
+    <workSpeedStat>ResearchSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <unfinishedThingDef>UnfinishedExperiment</unfinishedThingDef>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Wood</li>
+          </thingDefs>
+        </filter>
+        <count>40</count>
+      </li>
+    </ingredients>
+    <products>
+      <FinishedExperiment>1</FinishedExperiment>
+    </products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>WoodLog</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <modExtensions>
+      <li Class="ImmersiveResearch.ResearchDefModExtension">
+        <researchTypes>
+          <li>Uncategorized</li>
+        </researchTypes>
+        <ResearchSize>
+          Small
+        </ResearchSize>
+      </li>
+    </modExtensions>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>MediumUncategorizedResearch</defName>
+    <label>medium uncategorized research project</label>
+    <description>A medium research project based on various fields with no specific well defined categorization.</description>
+    <jobString>Performing medium uncategorized experiment.</jobString>
+    <workAmount>1500</workAmount>
+    <workSpeedStat>ResearchSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <unfinishedThingDef>UnfinishedExperiment</unfinishedThingDef>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+    <products>
+      <FinishedExperiment>1</FinishedExperiment>
+    </products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <modExtensions>
+      <li Class="ImmersiveResearch.ResearchDefModExtension">
+        <researchTypes>
+          <li>Uncategorized</li>
+        </researchTypes>
+        <ResearchSize>
+          Medium
+        </ResearchSize>
+      </li>
+    </modExtensions>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>LargeUncategorizedResearch</defName>
+    <label>Large uncategorized research project</label>
+    <description>A large research project based on various fields with no specific well defined categorization.</description>
+    <jobString>Performing large uncategorized experiment.</jobString>
+    <workAmount>1500</workAmount>
+    <workSpeedStat>ResearchSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <unfinishedThingDef>UnfinishedExperiment</unfinishedThingDef>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Gold</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+    </ingredients>
+    <products>
+      <FinishedExperiment>1</FinishedExperiment>
+    </products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Gold</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <modExtensions>
+      <li Class="ImmersiveResearch.ResearchDefModExtension">
+        <researchTypes>
+          <li>Uncategorized</li>
+        </researchTypes>
+        <ResearchSize>
+          Large
+        </ResearchSize>
+      </li>
+    </modExtensions>
+  </RecipeDef>
+  <RecipeDef>
     <defName>SmallMechanicalResearch</defName>
     <label>small mechanical research project</label>
-    <description>A small research project based on various mechanical fields. Will help advance the colony's knowledge on mechanical subjects. 
-    Requires: 75 Steel, 3 Components.</description>
+    <description>A small research project based on various mechanical fields. Will help advance the colony's knowledge on mechanical subjects.</description>
     <jobString>Performing small mechanical experiment.</jobString>
     <workAmount>1750</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -23,7 +139,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>75</count>
+        <count>15</count>
       </li>
       <li>
         <filter>
@@ -31,7 +147,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>3</count>
+        <count>1</count>
       </li>
     </ingredients>
     <products>
@@ -57,8 +173,7 @@
   <RecipeDef>
     <defName>MediumMechanicalResearch</defName>
     <label>Medium mechanical research project</label>
-    <description>A medium-sized research project based on various mechanical fields. Will help advance the colony's knowledge on mechanical subjects. 
-    Requires: 500 Steel, 10 Components, 10 Gold.</description>
+    <description>A medium-sized research project based on various mechanical fields. Will help advance the colony's knowledge on mechanical subjects.</description>
     <jobString>Performing medium mechanical experiment.</jobString>
     <workAmount>4500</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -72,7 +187,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>500</count>
+        <count>100</count>
       </li>
       <li>
         <filter>
@@ -88,7 +203,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>3</count>
       </li>
     </ingredients>
     <products>
@@ -115,8 +230,7 @@
   <RecipeDef>
     <defName>LargeMechanicalResearch</defName>
     <label>Large mechanical research project</label>
-    <description>A large research project based on various mechanical fields. Will greatly help advance the colony's knowledge on mechanical subjects. 
-    Requires: 750 Steel, 15 Components, 50 Plasteel, 25 Gold.</description>
+    <description>A large research project based on various mechanical fields. Will greatly help advance the colony's knowledge on mechanical subjects.</description>
     <jobString>Performing large mechanical experiment.</jobString>
     <workAmount>7500</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -130,7 +244,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>750</count>
+        <count>150</count>
       </li>
       <li>
         <filter>
@@ -138,7 +252,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>15</count>
+        <count>5</count>
       </li>
       <li>
         <filter>
@@ -146,7 +260,7 @@
             <li>Plasteel</li>
           </thingDefs>
         </filter>
-        <count>50</count>
+        <count>5</count>
       </li>
       <li>
         <filter>
@@ -154,7 +268,7 @@
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>2.5</count>
+        <count>3</count>
       </li>
     </ingredients>
     <products>
@@ -183,8 +297,7 @@
   <RecipeDef>
     <defName>SmallTextilesResearch</defName>
     <label>small textiles research project</label>
-    <description>A small research project based on various textile assembly trades. Will help advance the colony's knowledge on the creation of various items from fabrics and cloths. 
-    Requires: 50 Leather.</description>
+    <description>A small research project based on various textile assembly trades. Will help advance the colony's knowledge on the creation of various items from fabrics and cloths.</description>
     <jobString>Performing small textiles experiment.</jobString>
     <workAmount>1600</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -197,11 +310,8 @@
           <categories>
             <li>Leathers</li>
           </categories>
-          <disallowedThingDefs>
-            <li>Leather_Thrumbo</li>
-          </disallowedThingDefs>
         </filter>
-        <count>50</count>
+        <count>10</count>
       </li>
     </ingredients>
     <products>
@@ -211,10 +321,6 @@
       <categories>
         <li>Leathers</li>
       </categories>
-      <disallowedThingDefs>
-        <li>Leather_Patch</li>
-        <li>Leather_Human</li>
-      </disallowedThingDefs>
     </fixedIngredientFilter>
     <modExtensions>
       <li Class="ImmersiveResearch.ResearchDefModExtension">
@@ -227,12 +333,89 @@
       </li>
     </modExtensions>
   </RecipeDef>
+    <RecipeDef>
+    <defName>MediumTextilesResearch</defName>
+    <label>Medium textiles research project</label>
+    <description>A medium research project based on various textile assembly trades. Will help advance the colony's knowledge on the creation of various items from fabrics and cloths.</description>
+    <jobString>Performing medium textiles experiment.</jobString>
+    <workAmount>4000</workAmount>
+    <workSpeedStat>ResearchSpeed</workSpeedStat>
+    <effectWorking>Tailor</effectWorking>
+    <soundWorking>Recipe_Tailor</soundWorking>
+    <unfinishedThingDef>UnfinishedExperiment</unfinishedThingDef>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Leathers</li>
+          </categories>
+        </filter>
+        <count>25</count>
+      </li>
+    </ingredients>
+    <products>
+      <FinishedExperiment>1</FinishedExperiment>
+    </products>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Leathers</li>
+      </categories>
+    </fixedIngredientFilter>
+    <modExtensions>
+      <li Class="ImmersiveResearch.ResearchDefModExtension">
+        <researchTypes>
+          <li>Textiles</li>
+        </researchTypes>
+        <ResearchSize>
+          Medium
+        </ResearchSize>
+      </li>
+    </modExtensions>
+  </RecipeDef>
+    <RecipeDef>
+    <defName>LargeTextilesResearch</defName>
+    <label>large textiles research project</label>
+    <description>A large research project based on various textile assembly trades. Will help advance the colony's knowledge on the creation of various items from fabrics and cloths.</description>
+    <jobString>Performing large textiles experiment.</jobString>
+    <workAmount>6000</workAmount>
+    <workSpeedStat>ResearchSpeed</workSpeedStat>
+    <effectWorking>Tailor</effectWorking>
+    <soundWorking>Recipe_Tailor</soundWorking>
+    <unfinishedThingDef>UnfinishedExperiment</unfinishedThingDef>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Leathers</li>
+          </categories>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+    <products>
+      <FinishedExperiment>1</FinishedExperiment>
+    </products>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Leathers</li>
+      </categories>
+    </fixedIngredientFilter>
+    <modExtensions>
+      <li Class="ImmersiveResearch.ResearchDefModExtension">
+        <researchTypes>
+          <li>Textiles</li>
+        </researchTypes>
+        <ResearchSize>
+          Large
+        </ResearchSize>
+      </li>
+    </modExtensions>
+  </RecipeDef>
   <!-- Cultural -->
   <RecipeDef>
     <defName>SmallCulturalResearch</defName>
     <label>small cultural research project</label>
-    <description>A small research project based on anthropology. Will help advance the colony's knowledge on the creation of various items that will provide social benefits for colonists and lords. 
-    Requires: 75 Leather.</description>
+    <description>A small research project based on anthropology. Will help advance the colony's knowledge on the creation of various items that will provide social benefits for colonists and lords.</description>
     <jobString>Performing small textiles experiment.</jobString>
     <workAmount>1600</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -245,11 +428,8 @@
           <categories>
             <li>Leathers</li>
           </categories>
-          <disallowedThingDefs>
-            <li>Leather_Thrumbo</li>
-          </disallowedThingDefs>
         </filter>
-        <count>75</count>
+        <count>15</count>
       </li>
     </ingredients>
     <products>
@@ -259,10 +439,6 @@
       <categories>
         <li>Leathers</li>
       </categories>
-      <disallowedThingDefs>
-        <li>Leather_Patch</li>
-        <li>Leather_Human</li>
-      </disallowedThingDefs>
     </fixedIngredientFilter>
     <modExtensions>
       <li Class="ImmersiveResearch.ResearchDefModExtension">
@@ -278,8 +454,7 @@
   <RecipeDef>
     <defName>MediumCulturalResearch</defName>
     <label>medium cultural research project</label>
-    <description>A medium-sized research project based on anthropology. Will help advance the colony's knowledge on the creation of various items that will provide social benefits for colonists and lords. 
-    Requires: 100 Leather, 50 steel, 1 component.</description>
+    <description>A medium-sized research project based on anthropology. Will help advance the colony's knowledge on the creation of various items that will provide social benefits for colonists and lords.</description>
     <jobString>Performing small textiles experiment.</jobString>
     <workAmount>4500</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -292,11 +467,8 @@
           <categories>
             <li>Leathers</li>
           </categories>
-          <disallowedThingDefs>
-            <li>Leather_Thrumbo</li>
-          </disallowedThingDefs>
         </filter>
-        <count>100</count>
+        <count>20</count>
       </li>
       <li>
         <filter>
@@ -304,7 +476,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>50</count>
+        <count>10</count>
       </li>
       <li>
         <filter>
@@ -326,10 +498,6 @@
         <li>Steel</li>
         <li>ComponentIndustrial</li>
       </thingDefs>
-      <disallowedThingDefs>
-        <li>Leather_Patch</li>
-        <li>Leather_Human</li>
-      </disallowedThingDefs>
     </fixedIngredientFilter>
     <modExtensions>
       <li Class="ImmersiveResearch.ResearchDefModExtension">
@@ -345,8 +513,7 @@
   <RecipeDef>
     <defName>LargeCulturalResearch</defName>
     <label>large cultural research project</label>
-    <description>A large research project based on anthropology. Will help advance the colony's knowledge on the creation of various items that will provide social benefits for colonists and lords. 
-    Requires: 150 Leather, 200 steel, 5 components.</description>
+    <description>A large research project based on anthropology. Will help advance the colony's knowledge on the creation of various items that will provide social benefits for colonists and lords.</description>
     <jobString>Performing small textiles experiment.</jobString>
     <workAmount>1600</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -359,11 +526,8 @@
           <categories>
             <li>Leathers</li>
           </categories>
-          <disallowedThingDefs>
-            <li>Leather_Thrumbo</li>
-          </disallowedThingDefs>
         </filter>
-        <count>150</count>
+        <count>30</count>
       </li>
       <li>
         <filter>
@@ -371,7 +535,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>200</count>
+        <count>40</count>
       </li>
       <li>
         <filter>
@@ -379,7 +543,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>5</count>
+        <count>2</count>
       </li>
     </ingredients>
     <products>
@@ -393,10 +557,6 @@
         <li>Steel</li>
         <li>ComponentIndustrial</li>
       </thingDefs>
-      <disallowedThingDefs>
-        <li>Leather_Patch</li>
-        <li>Leather_Human</li>
-      </disallowedThingDefs>
     </fixedIngredientFilter>
     <modExtensions>
       <li Class="ImmersiveResearch.ResearchDefModExtension">
@@ -413,8 +573,7 @@
   <RecipeDef>
     <defName>SmallBiologicalResearch</defName>
     <label>Small biological research project</label>
-    <description>A small-sized research project based on the biological sciences. Will help advance the colony's knowledge on various fields, such as farming and botany. 
-    Requires: 100 Raw plant matter.</description>
+    <description>A small-sized research project based on the biological sciences. Will help advance the colony's knowledge on various fields, such as farming and botany.</description>
     <jobString>Performing small biological experiment.</jobString>
     <workAmount>1750</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -428,7 +587,7 @@
             <li>PlantFoodRaw</li>
           </categories>
         </filter>
-        <count>100</count>
+        <count>20</count>
       </li>
     </ingredients>
     <products>
@@ -453,8 +612,7 @@
   <RecipeDef>
     <defName>MediumBiologicalResearch</defName>
     <label>Medium biological research project</label>
-    <description>A medium-sized research project based on the biological sciences. Will help advance the colony's knowledge on the flora and fauna of this alien world.
-    Requires: 400 Raw plant matter, 30 Insect Jelly.</description>
+    <description>A medium-sized research project based on the biological sciences. Will help advance the colony's knowledge on the flora and fauna of this alien world.</description>
     <jobString>Performing medium biological experiment.</jobString>
     <workAmount>4000</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -468,7 +626,7 @@
             <li>PlantFoodRaw</li>
           </categories>
         </filter>
-        <count>400</count>
+        <count>80</count>
       </li>
       <li>
         <filter>
@@ -476,7 +634,7 @@
             <li>InsectJelly</li>
           </thingDefs>
         </filter>
-        <count>30</count>
+        <count>6</count>
       </li>
     </ingredients>
     <products>
@@ -504,8 +662,7 @@
   <RecipeDef>
     <defName>LargeBiologicalResearch</defName>
     <label>Large biological research project</label>
-    <description>A large research project based on the biological sciences. Will greatly advance the colony's knowledge on advanced biological fields. 
-    Requires: 800 Raw plant matter, 100 Insect jelly.</description>
+    <description>A large research project based on the biological sciences. Will greatly advance the colony's knowledge on advanced biological fields.</description>
     <jobString>Performing large biological experiment.</jobString>
     <workAmount>7000</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -519,7 +676,7 @@
             <li>PlantFoodRaw</li>
           </categories>
         </filter>
-        <count>800</count>
+        <count>160</count>
       </li>
       <li>
         <filter>
@@ -527,7 +684,7 @@
             <li>InsectJelly</li>
           </thingDefs>
         </filter>
-        <count>100</count>
+        <count>20</count>
       </li>
     </ingredients>
     <products>
@@ -556,8 +713,7 @@
   <RecipeDef>
     <defName>SmallConstructionResearch</defName>
     <label>Small construction research project</label>
-    <description>A small-sized research project based on basic construction techniques. Will help advance the colony's knowledge on building structures. 
-    Requires: 200 Wood, 50 Steel.</description>
+    <description>A small-sized research project based on basic construction techniques. Will help advance the colony's knowledge on building structures.</description>
     <jobString>Performing small construction experiment.</jobString>
     <workAmount>1750</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -571,7 +727,7 @@
             <li>WoodLog</li>
           </thingDefs>
         </filter>
-        <count>200</count>
+        <count>40</count>
       </li>
       <li>
         <filter>
@@ -579,7 +735,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>50</count>
+        <count>10</count>
       </li>
     </ingredients>
     <products>
@@ -605,8 +761,7 @@
   <RecipeDef>
     <defName>MediumConstructionResearch</defName>
     <label>Medium construction research project</label>
-    <description>A medium-sized research project based on intermediate construction techniques. Will help advance the colony's knowledge on building more complex structures. 
-    Requires: 100 Any stone block, 100 Steel, 300 Wood.</description>
+    <description>A medium-sized research project based on intermediate construction techniques. Will help advance the colony's knowledge on building more complex structures.</description>
     <jobString>Performing  experiment.</jobString>
     <workAmount>4500</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -620,7 +775,7 @@
             <li>StoneBlocks</li>
           </categories>
         </filter>
-        <count>100</count>
+        <count>20</count>
       </li>
       <li>
         <filter>
@@ -628,7 +783,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>100</count>
+        <count>20</count>
       </li>
       <li>
         <filter>
@@ -636,7 +791,7 @@
             <li>WoodLog</li>
           </thingDefs>
         </filter>
-        <count>300</count>
+        <count>60</count>
       </li>
     </ingredients>
     <products>
@@ -665,8 +820,7 @@
   <RecipeDef>
     <defName>LargeConstructionResearch</defName>
     <label>Large construction research project</label>
-    <description>A large research project based on advanced construction techniques. Will greatly advance the colony's knowledge on building the most complex structures. 
-    Requires: 300 Any stone block, 400 Steel, 550 Wood.</description>
+    <description>A large research project based on advanced construction techniques. Will greatly advance the colony's knowledge on building the most complex structures.</description>
     <jobString>Performing large construction experiment.</jobString>
     <workAmount>7500</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -680,7 +834,7 @@
             <li>StoneBlocks</li>
           </categories>
         </filter>
-        <count>300</count>
+        <count>60</count>
       </li>
       <li>
         <filter>
@@ -688,7 +842,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>400</count>
+        <count>80</count>
       </li>
       <li>
         <filter>
@@ -696,7 +850,7 @@
             <li>WoodLog</li>
           </thingDefs>
         </filter>
-        <count>550</count>
+        <count>110</count>
       </li>
     </ingredients>
     <products>
@@ -723,8 +877,7 @@
   <RecipeDef>
     <defName>SmallMetallurgyResearch</defName>
     <label>Small metallurgy research project</label>
-    <description>A small-sized research project based on metallurgy. Will help advance the colony's knowledge on the production of basic metal products. 
-    Requires: 300 Steel.</description>
+    <description>A small-sized research project based on metallurgy. Will help advance the colony's knowledge on the production of basic metal products.</description>
     <jobString>Performing small metallurgy experiment.</jobString>
     <workAmount>1750</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -738,7 +891,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>300</count>
+        <count>60</count>
       </li>
     </ingredients>
     <products>
@@ -763,8 +916,7 @@
   <RecipeDef>
     <defName>MediumMetallurgyResearch</defName>
     <label>Medium metallurgy research project</label>
-    <description>A medium-sized research project based on metallurgy. Will help advance the colony's knowledge on the production of advanced metal products. 
-    Requires: 400 Steel, 15 Jade, 15 Gold.</description>
+    <description>A medium-sized research project based on metallurgy. Will help advance the colony's knowledge on the production of advanced metal products.</description>
     <jobString>Performing medium metallurgy experiment.</jobString>
     <workAmount>4500</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -778,7 +930,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>400</count>
+        <count>80</count>
       </li>
       <li>
         <filter>
@@ -786,7 +938,7 @@
             <li>Jade</li>
           </thingDefs>
         </filter>
-        <count>15</count>
+        <count>3</count>
       </li>
       <li>
         <filter>
@@ -794,7 +946,7 @@
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>1.5</count>
+        <count>1</count>
       </li>
     </ingredients>
     <products>
@@ -822,8 +974,7 @@
   <RecipeDef>
     <defName>SmallWeaponryResearch</defName>
     <label>Small weaponry research project</label>
-    <description>A small-sized research project based on the art of combat. Will help advance the colony's knowledge on the production of weaponry.
-      Requires: 150 Steel, 200 Wood.</description>
+    <description>A small-sized research project based on the art of combat. Will help advance the colony's knowledge on the production of weaponry.</description>
     <jobString>Performing small weaponry experiment.</jobString>
     <workAmount>1750</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -837,7 +988,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>150</count>
+        <count>30</count>
       </li>
       <li>
         <filter>
@@ -845,7 +996,7 @@
             <li>WoodLog</li>
           </thingDefs>
         </filter>
-        <count>200</count>
+        <count>40</count>
       </li>
     </ingredients>
     <products>
@@ -871,8 +1022,7 @@
   <RecipeDef>
     <defName>MediumWeaponryResearch</defName>
     <label>Medium weaponry research project</label>
-    <description>A medium-sized research project based on the art of combat. Will help advance the colony's knowledge on the production of slightly advanced weaponry.
-      Requires: 800 Steel, 35 Uranium, 7 Components.</description>
+    <description>A medium-sized research project based on the art of combat. Will help advance the colony's knowledge on the production of slightly advanced weaponry.</description>
     <jobString>Performing medium weaponry experiment.</jobString>
     <workAmount>4500</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -886,7 +1036,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>800</count>
+        <count>160</count>
       </li>
       <li>
         <filter>
@@ -894,7 +1044,7 @@
             <li>Uranium</li>
           </thingDefs>
         </filter>
-        <count>3.5</count>
+        <count>1</count>
       </li>
       <li>
         <filter>
@@ -902,7 +1052,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>7</count>
+        <count>2</count>
       </li>
     </ingredients>
     <products>
@@ -929,8 +1079,7 @@
   <RecipeDef>
     <defName>LargeWeaponryResearch</defName>
     <label>Large weaponry research project</label>
-    <description>A large research project based on the art of combat. Will help advance the colony's knowledge on the production of highly advanced weaponry and armour.
-      Requires: 1000 Steel, 100 Uranium, 100 Gold, 100 Jade, 10 Components.</description>
+    <description>A large research project based on the art of combat. Will help advance the colony's knowledge on the production of highly advanced weaponry and armour.</description>
     <jobString>Performing large weaponry experiment.</jobString>
     <workAmount>7500</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -944,7 +1093,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>1000</count>
+        <count>200</count>
       </li>
       <li>
         <filter>
@@ -952,7 +1101,7 @@
             <li>Uranium</li>
           </thingDefs>
         </filter>
-        <count>10.0</count>
+        <count>2.0</count>
       </li>
       <li>
         <filter>
@@ -960,7 +1109,7 @@
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>10.0</count>
+        <count>2.0</count>
       </li>
       <li>
         <filter>
@@ -968,7 +1117,7 @@
             <li>Jade</li>
           </thingDefs>
         </filter>
-        <count>10.0</count>
+        <count>2.0</count>
       </li>
       <li>
         <filter>
@@ -1006,8 +1155,7 @@
   <RecipeDef>
     <defName>SmallElectricalResearch</defName>
     <label>Small electrical research project</label>
-    <description>A small-sized research project based on the usage of electricity. Will help advance the colony's knowledge on the small-scale usage of electricity.
-      Requires: 400 Steel, 7 Components.</description>
+    <description>A small-sized research project based on the usage of electricity. Will help advance the colony's knowledge on the small-scale usage of electricity.</description>
     <jobString>Performing small electrical experiment.</jobString>
     <workAmount>1750</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -1021,7 +1169,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>400</count>
+        <count>40</count>
       </li>
       <li>
         <filter>
@@ -1029,7 +1177,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>7</count>
+        <count>2</count>
       </li>
     </ingredients>
     <products>
@@ -1055,8 +1203,7 @@
   <RecipeDef>
     <defName>MediumElectricalResearch</defName>
     <label>Medium electrical research project</label>
-    <description>A medium-sized research project based on electrical engineering. Will help advance the colony's knowledge on the production of medium-scale electrical structures.
-      Requires: 400 Steel, 200 Chemfuel, 10 Components.</description>
+    <description>A medium-sized research project based on electrical engineering. Will help advance the colony's knowledge on the production of medium-scale electrical structures.</description>
     <jobString>Performing medium electrical experiment.</jobString>
     <workAmount>4500</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -1070,7 +1217,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>500</count>
+        <count>100</count>
       </li>
       <li>
         <filter>
@@ -1078,7 +1225,7 @@
             <li>Chemfuel</li>
           </thingDefs>
         </filter>
-        <count>200</count>
+        <count>40</count>
       </li>
       <li>
         <filter>
@@ -1086,7 +1233,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>2</count>
       </li>
     </ingredients>
     <products>
@@ -1113,8 +1260,7 @@
   <RecipeDef>
     <defName>LargeElectricalResearch</defName>
     <label>Large electrical research project</label>
-    <description>A large research project based on electrical engineering. Will help advance the colony's knowledge on the production of advanced, large-scale electrical structures and products.
-      Requires: 800 Steel, 400 Chemfuel, 15 Components, 50 Gold.</description>
+    <description>A large research project based on electrical engineering. Will help advance the colony's knowledge on the production of advanced, large-scale electrical structures and products.</description>
     <jobString>Performing large electrical experiment.</jobString>
     <workAmount>7500</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -1128,7 +1274,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>800</count>
+        <count>160</count>
       </li>
       <li>
         <filter>
@@ -1136,7 +1282,7 @@
             <li>Chemfuel</li>
           </thingDefs>
         </filter>
-        <count>400</count>
+        <count>80</count>
       </li>
       <li>
         <filter>
@@ -1144,7 +1290,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>15</count>
+        <count>3</count>
       </li>
       <li>
         <filter>
@@ -1152,7 +1298,7 @@
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>5.0</count>
+        <count>1.0</count>
       </li>
     </ingredients>
     <products>
@@ -1180,8 +1326,7 @@
   <RecipeDef>
     <defName>EssentialElectricalResearch</defName>
     <label>Essential electrical research project</label>
-    <description>A research project based on harnessing the power of electricity. Will provide essential stepping stones in electrical research for the colony.
-      Requires: 1000 Steel, 25 Uranium, 25 Gold, 10 Components.</description>
+    <description>A research project based on harnessing the power of electricity. Will provide essential stepping stones in electrical research for the colony.</description>
     <jobString>Performing essential electrical experiment.</jobString>
     <workAmount>4500</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -1195,7 +1340,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>1000</count>
+        <count>200</count>
       </li>
       <li>
         <filter>
@@ -1203,7 +1348,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>2</count>
       </li>
       <li>
         <filter>
@@ -1211,7 +1356,7 @@
             <li>Uranium</li>
           </thingDefs>
         </filter>
-        <count>2.5</count>
+        <count>1</count>
       </li>
       <li>
         <filter>
@@ -1219,7 +1364,7 @@
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>2.5</count>
+        <count>1</count>
       </li>
     </ingredients>
     <products>
@@ -1248,8 +1393,7 @@
   <RecipeDef>
     <defName>SmallMedicalResearch</defName>
     <label>Small medical research project</label>
-    <description>A small-sized research project based on medical sciences. Will help advance the colony's knowledge on the production of basic medical products.
-      Requires: 30 Herbal Medicine.</description>
+    <description>A small-sized research project based on medical sciences. Will help advance the colony's knowledge on the production of basic medical products.</description>
     <jobString>Performing small medical experiment.</jobString>
     <workAmount>1750</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -1263,7 +1407,7 @@
             <li>MedicineHerbal</li>
           </thingDefs>
         </filter>
-        <count>30</count>
+        <count>6</count>
       </li>
     </ingredients>
     <products>
@@ -1288,8 +1432,7 @@
   <RecipeDef>
     <defName>MediumMedicalResearch</defName>
     <label>Medium medical research project</label>
-    <description>A medium-sized research project based on medical sciences. Will help advance the colony's knowledge on the production of advanced medical products and techniques.
-      Requires: 35 Herbal Medicine, 100 Cloth, 10 Neutroamine.</description>
+    <description>A medium-sized research project based on medical sciences. Will help advance the colony's knowledge on the production of advanced medical products and techniques.</description>
     <jobString>Performing medium medical experiment.</jobString>
     <workAmount>4500</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -1303,7 +1446,7 @@
             <li>MedicineHerbal</li>
           </thingDefs>
         </filter>
-        <count>35</count>
+        <count>7</count>
       </li>
       <li>
         <filter>
@@ -1311,7 +1454,7 @@
             <li>Cloth</li>
           </thingDefs>
         </filter>
-        <count>100</count>
+        <count>20</count>
       </li>
       <li>
         <filter>
@@ -1319,7 +1462,7 @@
             <li>Neutroamine</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>1</count>
       </li>
     </ingredients>
     <products>
@@ -1346,8 +1489,7 @@
   <RecipeDef>
     <defName>LargeMedicalResearch</defName>
     <label>Large medical research project</label>
-    <description>A large research project based on medical sciences. Will greatly advance the colony's knowledge on the production of highly advanced medical products.
-      Requires: 50 Neutroamine, 45 Ambrosia, 120 Devilstrand.</description>
+    <description>A large research project based on medical sciences. Will greatly advance the colony's knowledge on the production of highly advanced medical products.</description>
     <jobString>Performing large medical experiment.</jobString>
     <workAmount>7500</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -1361,7 +1503,7 @@
             <li>Neutroamine</li>
           </thingDefs>
         </filter>
-        <count>50</count>
+        <count>10</count>
       </li>
       <li>
         <filter>
@@ -1369,7 +1511,7 @@
             <li>DevilstrandCloth</li>
           </thingDefs>
         </filter>
-        <count>120</count>
+        <count>24</count>
       </li>
       <li>
         <filter>
@@ -1377,7 +1519,7 @@
             <li>Ambrosia</li>
           </thingDefs>
         </filter>
-        <count>45</count>
+        <count>9</count>
       </li>
     </ingredients>
     <products>
@@ -1405,8 +1547,7 @@
   <RecipeDef>
     <defName>SmallAdvancedResearch</defName>
     <label>Small advanced research project</label>
-    <description>A small-sized research project based on high-end industrial technologies. Will provide the colony with highly advanced products and structures.
-      Requires: 75 Synthread, 100 Plasteel, 10 Components.</description>
+    <description>A small-sized research project based on high-end industrial technologies. Will provide the colony with highly advanced products and structures.</description>
     <jobString>Performing small advanced experiment.</jobString>
     <workAmount>1750</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -1420,7 +1561,7 @@
             <li>Synthread</li>
           </thingDefs>
         </filter>
-        <count>75</count>
+        <count>15</count>
       </li>
       <li>
         <filter>
@@ -1428,7 +1569,7 @@
             <li>Plasteel</li>
           </thingDefs>
         </filter>
-        <count>100</count>
+        <count>20</count>
       </li>
       <li>
         <filter>
@@ -1436,7 +1577,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>2</count>
       </li>
     </ingredients>
     <products>
@@ -1463,8 +1604,7 @@
   <RecipeDef>
     <defName>MediumAdvancedResearch</defName>
     <label>Medium advanced research project</label>
-    <description>A medium-sized research project based on high-end industrial technologies. Will provide the colony with highly advanced products and structures.
-      Requires: 250 Plasteel, 15 Components, 75 Synthread, 120 Chemfuel.</description>
+    <description>A medium-sized research project based on high-end industrial technologies. Will provide the colony with highly advanced products and structures.</description>
     <jobString>Performing medium advanced experiment.</jobString>
     <workAmount>4500</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -1478,7 +1618,7 @@
             <li>Plasteel</li>
           </thingDefs>
         </filter>
-        <count>250</count>
+        <count>50</count>
       </li>
       <li>
         <filter>
@@ -1486,7 +1626,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>15</count>
+        <count>3</count>
       </li>
       <li>
         <filter>
@@ -1494,7 +1634,7 @@
             <li>Synthread</li>
           </thingDefs>
         </filter>
-        <count>75</count>
+        <count>15</count>
       </li>
       <li>
         <filter>
@@ -1502,7 +1642,7 @@
             <li>Chemfuel</li>
           </thingDefs>
         </filter>
-        <count>120</count>
+        <count>24</count>
       </li>
     </ingredients>
     <products>
@@ -1531,8 +1671,7 @@
   <RecipeDef>
     <defName>LargeAdvancedResearch</defName>
     <label>Large advanced research project</label>
-    <description>A large research project based on high-end industrial technologies. Will provide the colony with large-scale advanced technologies.
-      Requires: 100 Synthread, 30 Components, 200 Chemfuel, 200 Plasteel.</description>
+    <description>A large research project based on high-end industrial technologies. Will provide the colony with large-scale advanced technologies.</description>
     <jobString>Performing large advanced experiment.</jobString>
     <workAmount>7500</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -1546,7 +1685,7 @@
             <li>Synthread</li>
           </thingDefs>
         </filter>
-        <count>100</count>
+        <count>20</count>
       </li>
       <li>
         <filter>
@@ -1554,7 +1693,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>30</count>
+        <count>6</count>
       </li>
       <li>
         <filter>
@@ -1562,7 +1701,7 @@
             <li>Chemfuel</li>
           </thingDefs>
         </filter>
-        <count>200</count>
+        <count>40</count>
       </li>
       <li>
         <filter>
@@ -1570,7 +1709,7 @@
             <li>Plasteel</li>
           </thingDefs>
         </filter>
-        <count>200</count>
+        <count>40</count>
       </li>
     </ingredients>
     <products>
@@ -1598,8 +1737,7 @@
   <RecipeDef>
     <defName>EssentialAdvancedResearch</defName>
     <label>Essential advanced research project</label>
-    <description>An essential research project based on high-end industrial technologies. Will provide the colony with vital technologies that will provide stepping stones to further projects.
-      Requires: 100 Synthread, 25 Hyperweave, 30 Components, 200 Plasteel, 1 Techprof Subpersona Core.</description>
+    <description>An essential research project based on high-end industrial technologies. Will provide the colony with vital technologies that will provide stepping stones to further projects.</description>
     <jobString>Performing essential advanced experiment.</jobString>
     <workAmount>4500</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -1613,7 +1751,7 @@
             <li>Synthread</li>
           </thingDefs>
         </filter>
-        <count>100</count>
+        <count>20</count>
       </li>
       <li>
         <filter>
@@ -1621,7 +1759,7 @@
             <li>Hyperweave</li>
           </thingDefs>
         </filter>
-        <count>25</count>
+        <count>5</count>
       </li>
       <li>
         <filter>
@@ -1629,7 +1767,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>30</count>
+        <count>6</count>
       </li>
       <li>
         <filter>
@@ -1637,7 +1775,7 @@
             <li>Plasteel</li>
           </thingDefs>
         </filter>
-        <count>200</count>
+        <count>40</count>
       </li>
       <li>
         <filter>
@@ -1672,11 +1810,160 @@
     </modExtensions>
   </RecipeDef>
   <!-- Spacer -->
+      <RecipeDef>
+    <defName>SmallSpacerResearch</defName>
+    <label>Small spacer research project</label>
+    <description>A small research project based on Glitterworld technologies. Will provide the colony with technologies only found on Glitterworlds.</description>
+    <jobString>Performing medium spacer experiment.</jobString>
+    <workAmount>2500</workAmount>
+    <workSpeedStat>ResearchSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <unfinishedThingDef>UnfinishedExperiment</unfinishedThingDef>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>1.0</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Gold</li>
+          </thingDefs>
+        </filter>
+        <count>1.0</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Hyperweave</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <FinishedExperiment>1</FinishedExperiment>
+    </products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Uranium</li>
+        <li>ComponentSpacer</li>
+        <li>Plasteel</li>
+        <li>Gold</li>
+        <li>Hyperweave</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <modExtensions>
+      <li Class="ImmersiveResearch.ResearchDefModExtension">
+        <researchTypes>
+          <li>Spacer</li>
+        </researchTypes>
+        <ResearchSize>
+          Small
+        </ResearchSize>
+      </li>
+    </modExtensions>
+  </RecipeDef>
+    <RecipeDef>
+    <defName>MediumSpacerResearch</defName>
+    <label>Medium spacer research project</label>
+    <description>A medium research project based on Glitterworld technologies. Will provide the colony with technologies only found on Glitterworlds.</description>
+    <jobString>Performing medium spacer experiment.</jobString>
+    <workAmount>5000</workAmount>
+    <workSpeedStat>ResearchSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <unfinishedThingDef>UnfinishedExperiment</unfinishedThingDef>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>1.0</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Gold</li>
+          </thingDefs>
+        </filter>
+        <count>1.0</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Hyperweave</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <FinishedExperiment>1</FinishedExperiment>
+    </products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Uranium</li>
+        <li>ComponentSpacer</li>
+        <li>Plasteel</li>
+        <li>Gold</li>
+        <li>Hyperweave</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <modExtensions>
+      <li Class="ImmersiveResearch.ResearchDefModExtension">
+        <researchTypes>
+          <li>Spacer</li>
+        </researchTypes>
+        <ResearchSize>
+          Medium
+        </ResearchSize>
+      </li>
+    </modExtensions>
+  </RecipeDef>
   <RecipeDef>
     <defName>LargeSpacerResearch</defName>
     <label>Large spacer research project</label>
-    <description>A large research project based on Glitterworld technologies. Will provide the colony with technologies only found on Glitterworlds.
-      Requires: 500 Plasteel, 100 Uranium, 100 Gold, 50 Hyperweave, 10 Advanced Components.</description>
+    <description>A large research project based on Glitterworld technologies. Will provide the colony with technologies only found on Glitterworlds.</description>
     <jobString>Performing large spacer experiment.</jobString>
     <workAmount>7500</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -1690,7 +1977,7 @@
             <li>Plasteel</li>
           </thingDefs>
         </filter>
-        <count>500</count>
+        <count>100</count>
       </li>
       <li>
         <filter>
@@ -1698,7 +1985,7 @@
             <li>Uranium</li>
           </thingDefs>
         </filter>
-        <count>10.0</count>
+        <count>2.0</count>
       </li>
       <li>
         <filter>
@@ -1706,7 +1993,7 @@
             <li>Gold</li>
           </thingDefs>
         </filter>
-        <count>10.0</count>
+        <count>2.0</count>
       </li>
       <li>
         <filter>
@@ -1714,7 +2001,7 @@
             <li>Hyperweave</li>
           </thingDefs>
         </filter>
-        <count>50</count>
+        <count>10</count>
       </li>
       <li>
         <filter>
@@ -1722,7 +2009,7 @@
             <li>ComponentSpacer</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>2</count>
       </li>
     </ingredients>
     <products>
@@ -1750,10 +2037,141 @@
   </RecipeDef>
   <!-- Spacecraft -->
   <RecipeDef>
+    <defName>SmallSpacecraftResearch</defName>
+    <label>small spacecraft research project</label>
+    <description>A small research project based on scavenged spacecraft parts and various visiting spaceships. Will provide the colony with spacecraft construction capabilities.</description>
+    <jobString>Performing small spacecraft experiment.</jobString>
+    <workAmount>2500</workAmount>
+    <workSpeedStat>ResearchSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <unfinishedThingDef>UnfinishedExperiment</unfinishedThingDef>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>40</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>TechprofSubpersonaCore</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <FinishedExperiment>1</FinishedExperiment>
+    </products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>ComponentSpacer</li>
+        <li>Chemfuel</li>
+        <li>TechprofSubpersonaCore</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <modExtensions>
+      <li Class="ImmersiveResearch.ResearchDefModExtension">
+        <researchTypes>
+          <li>Spacecraft</li>
+        </researchTypes>
+        <ResearchSize>
+          Small
+        </ResearchSize>
+      </li>
+    </modExtensions>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>MediumSpacecraftResearch</defName>
+    <label>medium spacecraft research project</label>
+    <description>A medium research project based on scavenged spacecraft parts and various visiting spaceships. Will provide the colony with spacecraft construction capabilities.</description>
+    <jobString>Performing medium spacecraft experiment.</jobString>
+    <workAmount>4000</workAmount>
+    <workSpeedStat>ResearchSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <unfinishedThingDef>UnfinishedExperiment</unfinishedThingDef>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>75</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>TechprofSubpersonaCore</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <FinishedExperiment>1</FinishedExperiment>
+    </products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>ComponentSpacer</li>
+        <li>Chemfuel</li>
+        <li>TechprofSubpersonaCore</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <modExtensions>
+      <li Class="ImmersiveResearch.ResearchDefModExtension">
+        <researchTypes>
+          <li>Spacecraft</li>
+        </researchTypes>
+        <ResearchSize>
+          Medium
+        </ResearchSize>
+      </li>
+    </modExtensions>
+  </RecipeDef>
+  <RecipeDef>
     <defName>LargeSpacecraftResearch</defName>
-    <label>Large spacecraft research project</label>
-    <description>A large research project based on scavenged spacecraft parts and various visiting spaceships. Will provide the colony with spacecraft construction capabilities.
-      Requires: 750 Plasteel, 20 Advanced Components, 500 Chemfuel, 1 Techprof Subpersona Core.</description>
+    <label>large spacecraft research project</label>
+    <description>A large research project based on scavenged spacecraft parts and various visiting spaceships. Will provide the colony with spacecraft construction capabilities.</description>
     <jobString>Performing large spacecraft experiment.</jobString>
     <workAmount>7500</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -1767,7 +2185,7 @@
             <li>Plasteel</li>
           </thingDefs>
         </filter>
-        <count>750</count>
+        <count>150</count>
       </li>
       <li>
         <filter>
@@ -1775,7 +2193,7 @@
             <li>ComponentSpacer</li>
           </thingDefs>
         </filter>
-        <count>20</count>
+        <count>4</count>
       </li>
       <li>
         <filter>
@@ -1783,7 +2201,7 @@
             <li>Chemfuel</li>
           </thingDefs>
         </filter>
-        <count>500</count>
+        <count>100</count>
       </li>
       <li>
         <filter>
@@ -1818,10 +2236,141 @@
   </RecipeDef>
   <!-- Ultratech-->
   <RecipeDef>
+    <defName>SmallUltratechResearch</defName>
+    <label>small ultratech research project</label>
+    <description>A small research project based on technologies observed and scavenged from the Shattered Empire that has colonised this world.</description>
+    <jobString>Performing small spacecraft experiment.</jobString>
+    <workAmount>3000</workAmount>
+    <workSpeedStat>ResearchSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <unfinishedThingDef>UnfinishedExperiment</unfinishedThingDef>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>75</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>TechprofSubpersonaCore</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <FinishedExperiment>1</FinishedExperiment>
+    </products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>ComponentSpacer</li>
+        <li>Chemfuel</li>
+        <li>TechprofSubpersonaCore</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <modExtensions>
+      <li Class="ImmersiveResearch.ResearchDefModExtension">
+        <researchTypes>
+          <li>Ultra</li>
+        </researchTypes>
+        <ResearchSize>
+          Small
+        </ResearchSize>
+      </li>
+    </modExtensions>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>MediumUltratechResearch</defName>
+    <label>medium ultratech research project</label>
+    <description>A medium research project based on technologies observed and scavenged from the Shattered Empire that has colonised this world.</description>
+    <jobString>Performing medium spacecraft experiment.</jobString>
+    <workAmount>5000</workAmount>
+    <workSpeedStat>ResearchSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <unfinishedThingDef>UnfinishedExperiment</unfinishedThingDef>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>100</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>TechprofSubpersonaCore</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <FinishedExperiment>1</FinishedExperiment>
+    </products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>ComponentSpacer</li>
+        <li>Chemfuel</li>
+        <li>TechprofSubpersonaCore</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <modExtensions>
+      <li Class="ImmersiveResearch.ResearchDefModExtension">
+        <researchTypes>
+          <li>Ultra</li>
+        </researchTypes>
+        <ResearchSize>
+          Medium
+        </ResearchSize>
+      </li>
+    </modExtensions>
+  </RecipeDef>
+  <RecipeDef>
     <defName>LargeUltratechResearch</defName>
     <label>Large ultratech research project</label>
-    <description>A substantial research project based on technologies observed and scavenged from the Shattered Empire that has colonised this world. 
-      Requires: 750 Plasteel, 20 Advanced Components, 500 Chemfuel, 1 Techprof Subpersona Core.</description>
+    <description>A substantial research project based on technologies observed and scavenged from the Shattered Empire that has colonised this world.</description>
     <jobString>Performing large spacecraft experiment.</jobString>
     <workAmount>7500</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -1835,7 +2384,7 @@
             <li>Plasteel</li>
           </thingDefs>
         </filter>
-        <count>750</count>
+        <count>150</count>
       </li>
       <li>
         <filter>
@@ -1843,7 +2392,7 @@
             <li>ComponentSpacer</li>
           </thingDefs>
         </filter>
-        <count>20</count>
+        <count>4</count>
       </li>
       <li>
         <filter>
@@ -1851,7 +2400,7 @@
             <li>Chemfuel</li>
           </thingDefs>
         </filter>
-        <count>500</count>
+        <count>100</count>
       </li>
       <li>
         <filter>
@@ -1887,8 +2436,7 @@
   <RecipeDef>
     <defName>UnknownModResearch</defName>
     <label>Mod research project</label>
-    <description>A research project based on rumours and knowledge passed on from visitors. Will provide the colony with unique, bespoke research projects. (This experiment will unlock any random non-vanilla research project).
-      Requires: 750 Silver.</description>
+    <description>A research project based on rumours and knowledge passed on from visitors. Will provide the colony with unique, bespoke research projects. (This experiment will unlock any random non-vanilla research project).</description>
     <jobString>Performing mod experiment.</jobString>
     <workAmount>4500</workAmount>
     <workSpeedStat>ResearchSpeed</workSpeedStat>
@@ -1902,7 +2450,7 @@
             <li>Silver</li>
           </thingDefs>
         </filter>
-        <count>75.0</count>
+        <count>15.0</count>
       </li>
     </ingredients>
     <products>

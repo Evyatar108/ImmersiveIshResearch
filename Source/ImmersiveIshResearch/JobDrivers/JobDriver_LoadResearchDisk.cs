@@ -60,7 +60,7 @@ namespace ImmersiveResearch
                     // get a random research from entire list
                     var result = LoreComputerHarmonyPatches.SelectResearchByUniformCumulativeProb(
                         LoreComputerHarmonyPatches
-                            .UndiscoveredResearchList.MainResearchDict.Values.ToList());
+                            .UndiscoveredResearchList.MainResearchDict.Values);
                     LoreComputerHarmonyPatches.AddNewResearch(result);
 
                     Find.LetterStack.ReceiveLetter("Research Disk Loaded",

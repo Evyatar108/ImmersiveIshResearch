@@ -39,6 +39,11 @@ namespace ImmersiveResearch
             Action<ImmersiveResearchDrawEntry> clickedCallback, Action<ImmersiveResearchDrawEntry> mousedOverCallback,
             Vector2 scrollPosition, Rect scrollOutRect)
         {
+            if (image == null)
+            {
+                throw new ArgumentNullException(nameof(image));
+            }
+
             var width1 = width * 0.45f;
             var height1 = y - 22;
             var labelRect = new Rect(x, height1, width, Text.CalcHeight("test", width1));

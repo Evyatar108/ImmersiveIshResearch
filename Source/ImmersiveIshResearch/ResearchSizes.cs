@@ -2,11 +2,11 @@
 {
     public enum ResearchSizes
     {
+        Unknown,
         Small,
         Medium,
         Large,
         Essential,
-        Unknown,
         None
     }
 }

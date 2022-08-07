@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Android tiers</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ResearchProjectDef[defName="ATPP_ResearchM8"]</xpath>
+					<value>
+						<li Class="ImmersiveResearch.ResearchDefModExtension">
+							<researchTypes>
+								<li>Spacer</li>
+								<li>Mechanical</li>
+							</researchTypes>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ResearchProjectDef[defName="ATPP_ResearchSM7"]</xpath>
+					<value>
+						<li Class="ImmersiveResearch.ResearchDefModExtension">
+							<researchTypes>
+								<li>Spacer</li>
+								<li>Mechanical</li>
+							</researchTypes>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ResearchProjectDef[defName="ATPP_ResearchServerI100Serie"]</xpath>
+					<value>
+						<li Class="ImmersiveResearch.ResearchDefModExtension">
+							<researchTypes>
+								<li>Spacer</li>
+								<li>Mechanical</li>
+							</researchTypes>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ResearchProjectDef[defName="ATPP_ResearchServerI300Serie"]</xpath>
+					<value>
+						<li Class="ImmersiveResearch.ResearchDefModExtension">
+							<researchTypes>
+								<li>Spacer</li>
+								<li>Mechanical</li>
+							</researchTypes>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ResearchProjectDef[defName="ATPP_ResearchServerI500Serie"]</xpath>
+					<value>
+						<li Class="ImmersiveResearch.ResearchDefModExtension">
+							<researchTypes>
+								<li>Spacer</li>
+								<li>Mechanical</li>
+							</researchTypes>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ResearchProjectDef[defName="ATPP_ResearchSkyCloudCore"]</xpath>
+					<value>
+						<li Class="ImmersiveResearch.ResearchDefModExtension">
+							<researchTypes>
+								<li>Spacer</li>
+								<li>Mechanical</li>
+							</researchTypes>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ResearchProjectDef[defName="ATPP_ResearchVX3Chip"]</xpath>
+					<value>
+						<li Class="ImmersiveResearch.ResearchDefModExtension">
+							<researchTypes>
+								<li>Spacer</li>
+								<li>Mechanical</li>
+								<li>Medical</li>
+							</researchTypes>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ResearchProjectDef[defName="ATPP_ResearchVX2Chip"]</xpath>
+					<value>
+						<li Class="ImmersiveResearch.ResearchDefModExtension">
+							<researchTypes>
+								<li>Spacer</li>
+								<li>Mechanical</li>
+								<li>Medical</li>
+							</researchTypes>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ResearchProjectDef[defName="ATPP_ResearchVX1Chip"]</xpath>
+					<value>
+						<li Class="ImmersiveResearch.ResearchDefModExtension">
+							<researchTypes>
+								<li>Spacer</li>
+								<li>Mechanical</li>
+								<li>Medical</li>
+							</researchTypes>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ResearchProjectDef[defName="ATPP_ResearchVX0Chip"]</xpath>
+					<value>
+						<li Class="ImmersiveResearch.ResearchDefModExtension">
+							<researchTypes>
+								<li>Spacer</li>
+								<li>Mechanical</li>
+								<li>Medical</li>
+							</researchTypes>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ResearchProjectDef[defName="ATPP_ResearchBatteryOverload"]</xpath>
+					<value>
+						<li Class="ImmersiveResearch.ResearchDefModExtension">
+							<researchTypes>
+								<li>Spacer</li>
+								<li>Mechanical</li>
+								<li>Electrical</li>
+							</researchTypes>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ResearchProjectDef[defName="ATPP_ResearchSkyMindWAN"]</xpath>
+					<value>
+						<li Class="ImmersiveResearch.ResearchDefModExtension">
+							<researchTypes>
+								<li>Spacer</li>
+								<li>Mechanical</li>
+							</researchTypes>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ResearchProjectDef[defName="ATPP_ResearchSurrogateHost"]</xpath>
+					<value>
+						<li Class="ImmersiveResearch.ResearchDefModExtension">
+							<researchTypes>
+								<li>Spacer</li>
+								<li>Mechanical</li>
+								<li>Medical</li>
+							</researchTypes>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ResearchProjectDef[defName="ATPP_ResearchSkyMindLAN"]</xpath>
+					<value>
+						<li Class="ImmersiveResearch.ResearchDefModExtension">
+							<researchTypes>
+								<li>Spacer</li>
+								<li>Mechanical</li>
+							</researchTypes>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ResearchProjectDef[defName="ATPP_ResearchCharchingStation"]</xpath>
+					<value>
+						<li Class="ImmersiveResearch.ResearchDefModExtension">
+							<researchTypes>
+								<li>Spacer</li>
+								<li>Mechanical</li>
+								<li>Electrical</li>
+							</researchTypes>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ResearchProjectDef[defName="ATPP_ResearchCraftBasicNanoKit"]</xpath>
+					<value>
+						<li Class="ImmersiveResearch.ResearchDefModExtension">
+							<researchTypes>
+								<li>Spacer</li>
+								<li>Mechanical</li>
+							</researchTypes>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ResearchProjectDef[defName="ATPP_ResearchCraftIntermediateNanoKit"]</xpath>
+					<value>
+						<li Class="ImmersiveResearch.ResearchDefModExtension">
+							<researchTypes>
+								<li>Advanced</li>
+								<li>Mechanical</li>
+							</researchTypes>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ResearchProjectDef[defName="ATPP_ResearchCraftAdvancedNanoKit"]</xpath>
+					<value>
+						<li Class="ImmersiveResearch.ResearchDefModExtension">
+							<researchTypes>
+								<li>Spacer</li>
+								<li>Mechanical</li>
+							</researchTypes>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ResearchProjectDef[defName="ATPP_ResearchCraftRepairNaniteBanks"]</xpath>
+					<value>
+						<li Class="ImmersiveResearch.ResearchDefModExtension">
+							<researchTypes>
+								<li>Spacer</li>
+								<li>Mechanical</li>
+							</researchTypes>
+						</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

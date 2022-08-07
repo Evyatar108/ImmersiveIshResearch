@@ -35,7 +35,7 @@ namespace ImmersiveResearch
                 var r2 = new Rect(r1.xMax + 35f, curY, rowHeight, columnWidth);
                 testRectList.Add(r2);
 
-                curY += r1.height + 22f;
+                curY += r1.height + 35f;
             }
 
             if (!_cachedDrawEntries.NullOrEmpty())

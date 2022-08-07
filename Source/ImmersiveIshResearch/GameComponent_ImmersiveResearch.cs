@@ -19,31 +19,17 @@ namespace ImmersiveResearch
 
         public ResearchDict MainResearchDict { get; }
 
-        public Dictionary<string, List<string>> ColonyResearcherExperimentDict { get; } =
-            new Dictionary<string, List<string>>();
+        public Dictionary<string, HashSet<string>> ColonyResearcherExperimentDict { get; } =
+            new Dictionary<string, HashSet<string>>();
 
         public bool CheckResearcherHasPublishedExperiments(string pawn)
         {
-            if (ColonyResearcherExperimentDict.ContainsKey(pawn))
-            {
-                return true;
-            }
-
-            return false;
+            return ColonyResearcherExperimentDict.ContainsKey(pawn);
         }
 
         private bool CheckResearcherAuthoredSpecificExperiment(string pawn, string def)
         {
-            var list = ColonyResearcherExperimentDict[pawn].Where(x => x == def);
-            for (var i = 0; i < list.Count(); i++)
-            {
-                if (list.ElementAt(i) == def)
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            return ColonyResearcherExperimentDict[pawn].Contains(def);
         }
 
         public void AddColonyExperimentToPawn(string researcher, string researchDef)
@@ -57,8 +43,7 @@ namespace ImmersiveResearch
             }
             else
             {
-                var temp = new List<string> { researchDef };
-                ColonyResearcherExperimentDict.Add(researcher, temp);
+                ColonyResearcherExperimentDict.Add(researcher, new HashSet<string> { researchDef });
             }
         }
 
@@ -74,21 +59,20 @@ namespace ImmersiveResearch
             }*/
 
             var currentProjectsInColony = ColonyResearcherExperimentDict[pawn];
-            var tempList = LoreComputerHarmonyPatches.FullConcreteResearchList;
             var researchDefList = new List<Tuple<ResearchProjectDef, int>>();
 
             foreach (var def in currentProjectsInColony)
             {
-                var list = tempList.Where(x => x.defName == def);
-                var tuple = new Tuple<ResearchProjectDef, int>(list.ElementAt(0),
-                    CheckNumOfAuthorsOnExperiment(list.ElementAt(0).defName));
-                researchDefList.Add(tuple);
+                var projDef = LoreComputerHarmonyPatches.FullConcreteResearchList.Where(x => x.defName == def).First();
+                var projectDefAndAuthorsCount = new Tuple<ResearchProjectDef, int>(projDef,
+                    CheckNumOfAuthorsOnExperiment(projDef.defName));
+                researchDefList.Add(projectDefAndAuthorsCount);
             }
 
-            foreach (var tuple in researchDefList)
+            foreach (var projAndAuthorsCount in researchDefList)
             {
-                var proj = tuple.Item1;
-                var numOfAuthors = tuple.Item2;
+                var proj = projAndAuthorsCount.Item1;
+                var numOfAuthors = projAndAuthorsCount.Item2;
 
                 if (numOfAuthors > 1)
                 {
@@ -98,30 +82,19 @@ namespace ImmersiveResearch
                         continue;
                     }
 
-                    if (proj.ProgressReal == 0.0f)
-                    {
-                        //_researchDict.MainResearchDict[proj.defName].IsDiscovered = false;
-                    }
-
-                    if (!proj.IsFinished && proj.ProgressReal == 0.0f)
+                    if (!proj.IsFinished)
                     {
                         continue;
                     }
 
                     var curProj = Find.ResearchManager.currentProj;
-                    if (curProj == null)
-                    {
-                        //Log.Error("proj is null");
-                        Find.ResearchManager.currentProj = proj;
-                    }
 
-                    if (Find.ResearchManager.currentProj != null)
-                    {
-                        var amount = GenerateProgressLossPerAuthor(numOfAuthors,
-                            Find.ResearchManager.currentProj.CostApparent);
-                        var finalAmount = amount * Find.ResearchManager.currentProj.CostApparent / 0.00825f;
-                        Find.ResearchManager.ResearchPerformed(-finalAmount, null);
-                    }
+                    Find.ResearchManager.currentProj = proj;
+
+                    var amount = GenerateProgressLossPerAuthor(numOfAuthors,
+                        Find.ResearchManager.currentProj.CostApparent);
+                    var finalAmount = amount * Find.ResearchManager.currentProj.CostApparent / 0.00825f;
+                    Find.ResearchManager.ResearchPerformed(-finalAmount, null);
 
                     Find.ResearchManager.currentProj = curProj;
                 }
@@ -137,7 +110,12 @@ namespace ImmersiveResearch
                         Find.LetterStack.ReceiveLetter("Colony Researcher Death - Sole Author",
                             proj.defName + " had one author. Unfortunately, the project has been lost.",
                             LetterDefOf.NegativeEvent);
-                        MainResearchDict.MainResearchDict[proj.defName].IsDiscovered = false;
+
+                        ImmersiveResearchProject immersiveProj = MainResearchDict.MainResearchDict[proj.defName];
+
+                        immersiveProj.IsDiscovered = false;
+
+                        LoreComputerHarmonyPatches.TriggerDiscoveredResearchChangedEvent(immersiveProj);
                     }
 
                     if (!proj.IsFinished && proj.ProgressReal == 0.0f)
@@ -146,16 +124,11 @@ namespace ImmersiveResearch
                     }
 
                     var curProj = Find.ResearchManager.currentProj;
-                    if (curProj == null)
-                    {
-                        Find.ResearchManager.currentProj = proj;
-                    }
 
-                    if (Find.ResearchManager.currentProj != null)
-                    {
-                        Find.ResearchManager.ResearchPerformed(
-                            Find.ResearchManager.currentProj.ProgressReal / -0.00825f, null);
-                    }
+                    Find.ResearchManager.currentProj = proj;
+
+                    Find.ResearchManager.ResearchPerformed(
+                        Find.ResearchManager.currentProj.ProgressReal / -0.00825f, null);
 
                     Find.ResearchManager.currentProj = curProj;
                 }
@@ -168,15 +141,12 @@ namespace ImmersiveResearch
         {
             var result = 0;
 
-            for (var i = 0; i < ColonyResearcherExperimentDict.Count; ++i)
+            foreach (var authorAndExperiments in ColonyResearcherExperimentDict)
             {
-                var pawn = ColonyResearcherExperimentDict.Keys.ToList()[i];
-                for (var j = 0; j < ColonyResearcherExperimentDict[pawn].Count; ++j)
+                HashSet<string> experimentsDefs = authorAndExperiments.Value;
+                if (experimentsDefs.Contains(rDef))
                 {
-                    if (ColonyResearcherExperimentDict[pawn][j] == rDef)
-                    {
-                        result++;
-                    }
+                    result++;
                 }
             }
 
@@ -268,13 +238,13 @@ namespace ImmersiveResearch
             {
                 // TODO: change this so it doesnt use chars that could be used in a pawn name
                 //       Or to something else entirely
-                var tempList = new List<string>();
-                ColonyResearcherExperimentDict.Add(t, tempList);
+                var experiments = new HashSet<string>();
+                ColonyResearcherExperimentDict.Add(t, experiments);
                 foreach (var j in _colonyExperimentDefNamesForSaving)
                 {
                     var newDef = j.Substring(j.LastIndexOf("_", StringComparison.Ordinal) + 1);
                     //  Log.Error(newDef);
-                    tempList.Add(newDef);
+                    experiments.Add(newDef);
                 }
             }
         }

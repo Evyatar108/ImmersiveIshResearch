@@ -5,13 +5,15 @@ using Verse;
 
 namespace ImmersiveResearch
 {
-    public class ExperimentStack : BillStack
+    public class ExperimentStack : IExposable
     {
-        private List<Experiment> _experiments = new List<Experiment>();
+        private List<Experiment> _experiments;
+        public IBillGiver billGiver;
 
-        public ExperimentStack(IBillGiver giver) : base(giver)
+        public ExperimentStack(IBillGiver giver)
         {
-            billGiver = giver;
+            this.billGiver = giver;
+            this._experiments = new List<Experiment>();
         }
 
         public List<Experiment> Experiments => _experiments;
@@ -45,23 +47,6 @@ namespace ImmersiveResearch
 
             exp.deleted = true;
             _experiments.Remove(exp);
-        }
-
-        public new void RemoveIncompletableBills()
-        {
-            for (var num = _experiments.Count - 1; num >= 0; num--)
-            {
-                if (!_experiments[num].CompletableEver)
-                {
-                    _experiments.Remove(_experiments[num]);
-                }
-            }
-        }
-
-        public new void Clear()
-        {
-            _experiments.Clear();
-            billGiver.BillStack.Clear();
         }
 
         public void Reorder(Experiment exp, int offset)
@@ -109,7 +94,7 @@ namespace ImmersiveResearch
             }
         }
 
-        public new void ExposeData()
+        public void ExposeData()
         {
             Scribe_Collections.Look(ref _experiments, "Experiments", LookMode.Deep);
 

@@ -79,7 +79,7 @@ namespace ImmersiveResearch
             {
                 comp.AddPawnAuthor(experimentsInCabinet[defToTake].TryGetComp<ResearchThingComp>()
                     .pawnExperimentAuthorName);
-                comp.AddResearch(experimentsInCabinet[defToTake].TryGetComp<ResearchThingComp>().researchDefName);
+                comp.AddResearch(experimentsInCabinet[defToTake].TryGetComp<ResearchThingComp>().researchDef);
             }
 
             Thing result = newThing;
